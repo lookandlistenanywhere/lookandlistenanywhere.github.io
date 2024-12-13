@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Look and Listen Anywhere - Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background-color: #3b3b3b;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+        }
+
+        header h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 18px;
+            font-weight: 300;
+        }
+
+        /* Abstract section styling */
+        .abstract-section {
+            background-color: #f4f4f4;  /* Light background to match the body */
+            padding: 30px;
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;  /* Left-align the text */
+        }
+
+        .abstract-section h2 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            color: #333;  /* Dark gray color for the heading */
+            font-weight: bold;
+        }
+
+        .abstract-section p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #555;  /* Slightly lighter gray for the paragraph text */
+        }
+
+        /* Video section styling */
+        .video-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 1200px; /* Limits the maximum width */
+            width: 100%;  /* Ensures the grid stretches across full width */
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        .video-item {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 10px;
+        }
+
+        .video-item h3 {
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .video-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            width: 100%;  /* Ensure it spans full width */
+        }
+
+        .video-container video {
+            width: 48%;  /* Each video takes up almost half the available width */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            height: auto; /* Keep the aspect ratio */
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 14px;
+            color: #888;
+        }
+
+        footer a {
+            color: #3b3b3b;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Look and Listen Anywhere</h1>
+    <p>
+        Jackie Lin <sup>*</sup>, Chaitanya Amballa <sup>*</sup><br>
+        <!-- Equal contribution -->
+    </p>
+    <p>University of Illinois Urbana-Champaign</p>
+</header>
+
+<section class="abstract-section">
+    <h2>Abstract</h2>
+    <p>
+        Vision and sound are fundamental to human perception, particularly for interpreting environments. Visual cues provide localized, detailed information, while audio offers broader, more spatially diffuse cues.  Audio contains information beyond what is available visually in two key ways: 1) sound from sources outside the camera’s field of view or behind visual obstructions can still be perceived, and 2) the spectral and temporal characteristics of audio reveal physical properties of the scene’s geometry, both inside and outside the visual range. These audio cues help convey details about the scene’s geometry, size, topology, surfaces. 
+    </p>
+</section>
+
+<div class="video-grid">
+    <!-- Experiment 1: GT vs Pred -->
+    <div class="video-item">
+        <h3>Single source Jazz Train: GT vs Pred</h3>
+        <div class="video-container">
+            <video controls preload="auto" width="100%">
+                <source src="videos/seq1_loc_3.5_jazz_binaural_gt_converted.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video controls preload="auto" width="100%">
+                <source src="videos/seq1_loc_3.5_jazz_binaural_pred_converted.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <!-- Experiment 2: GT vs Pred -->
+    <div class="video-item">
+        <h3>Single source Jazz Val: GT vs Pred</h3>
+        <div class="video-container">
+            <video controls preload="auto" width="100%">
+                <source src="videos/seq2_loc_3.5_jazz_binaural_gt_converted.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video controls preload="auto" width="100%">
+                <source src="videos/seq2_loc_3.5_jazz_binaural_pred_converted.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <!-- Experiment 3: GT vs Pred -->
+    <div class="video-item">
+        <h3>Two-persons having conversations Train:GT vs Pred</h3>
+        <div class="video-container">
+            <video controls preload="auto" width="100%">
+                <source src="videos/seq1_loc_5.8_0.7_talkers_binaural_gt_converted.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video controls preload="auto" width="100%">
+                <source src="videos/seq1_loc_5.8_0.7_talkers_binaural_pred_converted.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <!-- Experiment 4: GT vs Pred -->
+    <div class="video-item">
+        <h3>Two-persons having conversations Val:GT vs Pred</h3>
+        <div class="video-container">
+            <video controls preload="auto" width="100%">
+                <source src="videos/seq2_loc_5.8_0.7_talkers_binaural_gt_converted.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video controls preload="auto" width="100%">
+                <source src="videos/seq2_loc_5.8_0.7_talkers_binaural_pred_converted.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+</div>
+
+<!-- <footer>
+    <p>Demo powered by <a href="https://yourlink.com" target="_blank">Your Project Name</a></p>
+</footer> -->
+
+</body>
+</html>
