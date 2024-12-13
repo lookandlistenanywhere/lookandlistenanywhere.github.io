@@ -58,6 +58,24 @@
             color: #555;  /* Slightly lighter gray for the paragraph text */
         }
 
+        /* Image section styling */
+        .image-section {
+            background-color: #f4f4f4;  /* Light background to match the body */
+            padding: 30px;
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;  /* Center-align the image */
+        }
+
+        .image-section-img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
         /* Video section styling */
         .video-grid {
             display: flex;
@@ -127,8 +145,12 @@
 <section class="abstract-section">
     <h2>Abstract</h2>
     <p>
-        Vision and sound are fundamental to human perception, particularly for interpreting environments. Visual cues provide localized, detailed information, while audio offers broader, more spatially diffuse cues.  Audio contains information beyond what is available visually in two key ways: 1) sound from sources outside the camera’s field of view or behind visual obstructions can still be perceived, and 2) the spectral and temporal characteristics of audio reveal physical properties of the scene’s geometry, both inside and outside the visual range. These audio cues help convey details about the scene’s geometry, size, topology, surfaces. 
+        Sound and vision provide complementary cues for perceiving our environments. While visual cues offer localized, fine-grained details, audio offers broader, spatially diffuse insights, including information outside the camera's view. Neural Radiance Fields (NeRFs) have successfully synthesized novel scenes by optimizing a volumetric function. In this work, we extend the capabilities of NeRFs to generate both novel visual scenes and corresponding binaural audio. Specifically, given a video recording of an indoor scene and a set of binaural room impulse responses (BRIRs) captured at known locations, our goal is to synthesize a video with binaural audio for any audio source placed anywhere within the scene, following any trajectory. We propose integrating visual cues into an audio-specific NeRF, enabling the generation of synchronized audio-visual content. Additionally, we leverage the SoundSpaces to synthesize high-quality audio-visual datasets. Our approach demonstrates promising results in generating dynamic, spatially accurate audio-visual scenes.
     </p>
+</section>
+
+<section class="image-section">
+    <img src="img/lola_teaser.png" alt="LoLA-teaser" class="image-section-img">
 </section>
 
 <div class="video-grid">
